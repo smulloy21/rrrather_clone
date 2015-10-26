@@ -1,14 +1,23 @@
-<div class="white row">
+<div class="white row vdivide">
   <div class="col-xs-7">
     <h2><%= question.title %>... <small>(asked by <%= User.find(question.user_id).username %> <%= time_ago_in_words question.created_at %> ago)</small></h2>
-    <% question.options.each do |option| %>
-    <div class="col-xs-6">
-      <%= image_tag(option.image_url) %>
-      <h4><%= option.text %></h4>
+    <div class=" text-center col-xs-5">
+      <div style="background-image: url(<%= question.options.first.image_url %>); background-size: cover; height: 200px;">
+
+      </div>
+      <h4><%= question.options.first.text %></h4>
     </div>
-    <% end %>
+    <div class="col-xs-2 text-center">
+      <h2>OR</h2>
+    </div>
+    <div class="col-xs-5 text-center">
+      <div id="name" style="background-image: url(<%= question.options.last.image_url %>); background-size: cover; height: 200px;">
+
+      </div>
+      <h4><%= question.options.last.text %></h4>
+    </div>
   </div>
-  <div class="col-xs-5">
+  <div class="col-xs-5 comment-box">
     <h3>Leave a comment</h3>
   </div>
 </div>
