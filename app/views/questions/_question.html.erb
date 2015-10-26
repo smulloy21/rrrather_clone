@@ -1,0 +1,15 @@
+<div class="white row">
+  <div class="col-xs-7">
+    <h2><%= question.title %>... <small>(asked by <%= User.find(question.user_id).username %> <%= time_ago_in_words question.created_at %> ago)</small></h2>
+    <% question.options.each do |option| %>
+    <div class="col-xs-6">
+      <%= image_tag(option.image_url) %>
+      <h4><%= option.text %></h4>
+    </div>
+    <% end %>
+  </div>
+  <div class="col-xs-5">
+    <h3>Leave a comment</h3>
+  </div>
+</div>
+<br>

@@ -1,0 +1,8 @@
+<div class="header text-center">
+  <h1>What would you rather?</h1>
+</div>
+
+
+<% @questions.each do |question| %>
+<%= render 'question', :question => question %>
+<% end %>

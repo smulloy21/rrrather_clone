@@ -1,0 +1,58 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import 'bootstrap-sprockets';
+ @import 'bootstrap';
+
+ body {
+   color: #7a7f88;
+   font: 13px/22px Arial,Helvetica,sans-serif;
+   font-family: 'Noto Sans', sans-serif;
+   background: url('http://www.rrrather.com/images/bg-body.jpg');
+   text-rendering: optimizelegibility;
+ }
+
+ nav.navbar {
+   border-radius: 0;
+   background: -webkit-linear-gradient(top,rgba(169,208,63,1) 0,rgba(161,203,63,1) 23%,rgba(133,188,65,1) 72%,rgba(122,181,65,1) 100%);
+   border: #a9d03f;
+ }
+ .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {
+   color: #fff;
+   text-shadow: 0 1px 0 #508a12;
+ }
+ .navbar .logo {
+   float: left;
+   text-indent: -9999px;
+   overflow: hidden;
+   background: url('http://www.rrrather.com/images/logo-highres.png') no-repeat;
+   background-size: 152px 35px;
+   width: 152px;
+   height: 35px;
+   margin: 5px 47px 0 0;
+ }
+
+ .white {
+   background-color: #fff;
+   box-shadow: 1px 1px 4px #d5d2d2;
+ }
+ .header {
+   font-stretch: condensed;
+   font-weight: bold;
+   color: #5c6167;
+   text-shadow: 1px 1px 0 #fcfcfc;
+   font-size: 2em;
+   font: 48px/50px "HelveticaNeue-CondensedBold","HelveticaNeueBoldCondensed","HelveticaNeue-Bold-Condensed","Helvetica Neue Bold Condensed","HelveticaNeue","Helvetica Neue",'TeXGyreHerosCnBold',"Helvetica","Tahoma","Geneva","Arial Narrow","Arial",sans-serif;
+ }
