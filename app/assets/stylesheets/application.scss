@@ -16,56 +16,138 @@
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
 
- body {
-   color: #7a7f88;
-   font: 13px/22px Arial,Helvetica,sans-serif;
-   font-family: 'Noto Sans', sans-serif;
-   background: url('http://www.rrrather.com/images/bg-body.jpg');
-   text-rendering: optimizelegibility;
- }
+body {
+  color: #7a7f88;
+  font: 13px/22px Arial,Helvetica,sans-serif;
+  font-family: 'Noto Sans', sans-serif;
+  background: url('http://www.rrrather.com/images/bg-body.jpg');
+  text-rendering: optimizelegibility;
+}
+nav.navbar {
+  border-radius: 0;
+  background: -webkit-linear-gradient(top,rgba(169,208,63,1) 0,rgba(161,203,63,1) 23%,rgba(133,188,65,1) 72%,rgba(122,181,65,1) 100%);
+  border: #a9d03f;
+  overflow: visible;
+  margin-bottom: 20px;
+}
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {
+  text-shadow: 0 1px 0 #508a12;
+  padding: 25px 19px 21px 18px;
+  display: block;
+  color: #fff;
+  font: 14px/20px "Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:visited {
+  background: -webkit-linear-gradient(top,rgba(154,189,57,1) 0,rgba(146,185,57,1) 25%,rgba(118,169,59,1) 78%,rgba(113,166,59,1) 95%,rgba(106,158,56,1) 100%);
+}
+.navbar ul.nav>li {
+  float: left;
+  border-left: 1px solid #b9d965;
+  border-right: 1px solid #73aa3d;
+}
+.navbar .logo {
+  float: left;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url('http://www.rrrather.com/images/logo-highres.png') no-repeat;
+  background-size: 152px 35px;
+  width: 152px;
+  height: 35px;
+  margin: 15px 47px 0 0;
+}
+.navbar-inverse {
+  min-height: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 5px 5px 16px #c6c6c8;
+}
+.white {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px #d5d2d2;
+}
+.header {
+  padding-bottom: .75em;
+  font-stretch: condensed;
+  font-weight: bold;
+  color: #5c6167;
+  text-shadow: 1px 1px 0 #fcfcfc;
+  font-size: 2em;
+  font: 48px/50px "HelveticaNeue-CondensedBold","HelveticaNeueBoldCondensed","HelveticaNeue-Bold-Condensed","Helvetica Neue Bold Condensed","HelveticaNeue","Helvetica Neue",'TeXGyreHerosCnBold',"Helvetica","Tahoma","Geneva","Arial Narrow","Arial",sans-serif;
+}
+.container {
+  width: 1180px;
+}
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+  clear: both;
+}
+.cols {
+  background: #fff;
+  box-shadow: 1px 1px 4px #d5d2d2;
+  border-radius: 4 рх;
+  position: relative;
+  margin: 10px 5px 15px 5px;
+  padding: 20px 36px 24px;
+}
+.holder {
+  background: url('http://www.rrrather.com/images/sep-05.png') repeat-y 627px 0;
+  padding: 14px 0 0;
+  width: 100%;
+}
+h1 {
+  margin: 24px 0 27px;
+  text-align: center;
+  font: 48px/50px "HelveticaNeue-CondensedBold","HelveticaNeueBoldCondensed","HelveticaNeue-Bold-Condensed","Helvetica Neue Bold Condensed","HelveticaNeue","Helvetica Neue",'TeXGyreHerosCnBold',"Helvetica","Tahoma","Geneva","Arial Narrow","Arial",sans-serif;
+  font-stretch: condensed;
+  font-weight: bold;
+  color: #5c6167;
+  text-shadow: 1px 1px 0 #fcfcfc;
+}
+h2 {
+  margin: 0 0 14px -3px;
+  color: #44484d;
+  font-size: 28px;
+  font-family: HelveticaNeue-CondensedBold, HelveticaNeueBoldCondensed, HelveticaNeue-Bold-Condensed, 'Helvetica Neue Bold Condensed', HelveticaNeue, 'Helvetica Neue', TeXGyreHerosCnBold, Helvetica, Tahoma, Geneva, 'Arial Narrow', Arial, sans-serif;
+  line-height: 30px;
+  font-weight: 600;
+  font-stretch: condensed;
+}
+h2 span {
+  font-size: 15px;
+  line-height: 10px;
+  color: #99a1ac;
+  margin: 0 0 0 -3px;
+  font-weight: 600;
+  font-stretch: condensed;
+}
+.photo-tile {
+  border-radius: 5px;
+  background-color: #eee;
+  padding: 5px;
+  text-shadow: 1px 1px 0 #fcfcfc;
+  box-shadow: 1px 1px 3px #dbd9d9,-1px -1px 3px #dbd9d9,-1px 1px 3px #dbd9d9,1px -1px 3px #dbd9d9;
+}
+.photo-tile:hover {
+  background: -webkit-linear-gradient(top,rgba(169,208,63,1) 0,rgba(161,203,63,1) 23%,rgba(133,188,65,1) 72%,rgba(122,181,65,1) 100%);
+  color: #fff;
+  text-shadow: 1px 1px 0 #333;
+}
+.photo-insert {
+  border-radius: 5px;
+  background-size: cover; height: 200px;
+  box-shadow: 1px 1px 3px #dbd9d9,-1px -1px 3px #dbd9d9,-1px 1px 3px #dbd9d9,1px -1px 3px #dbd9d9;
+}
+.comment-box {
 
- nav.navbar {
-   border-radius: 0;
-   background: -webkit-linear-gradient(top,rgba(169,208,63,1) 0,rgba(161,203,63,1) 23%,rgba(133,188,65,1) 72%,rgba(122,181,65,1) 100%);
-   border: #a9d03f;
- }
- .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {
-   color: #fff;
-   text-shadow: 0 1px 0 #508a12;
- }
- .navbar .logo {
-   float: left;
-   text-indent: -9999px;
-   overflow: hidden;
-   background: url('http://www.rrrather.com/images/logo-highres.png') no-repeat;
-   background-size: 152px 35px;
-   width: 152px;
-   height: 35px;
-   margin: 5px 47px 0 0;
- }
-
- .white {
-   background-color: #fff;
-   box-shadow: 1px 1px 4px #d5d2d2;
- }
- .header {
-   padding-bottom: .75em;
-   font-stretch: condensed;
-   font-weight: bold;
-   color: #5c6167;
-   text-shadow: 1px 1px 0 #fcfcfc;
-   font-size: 2em;
-   font: 48px/50px "HelveticaNeue-CondensedBold","HelveticaNeueBoldCondensed","HelveticaNeue-Bold-Condensed","Helvetica Neue Bold Condensed","HelveticaNeue","Helvetica Neue",'TeXGyreHerosCnBold',"Helvetica","Tahoma","Geneva","Arial Narrow","Arial",sans-serif;
- }
-
-//  .row.vdivide [class*='col-']:not(:last-child):after {
-//   background: #e0e0e0;
-//   width: 1px;
-//   content: "";
-//   display:block;
-//   position: absolute;
-//   top:0;
-//   bottom: 0;
-//   right: 0;
-//   min-height: 70px;
-// }
+}
+a {
+  color: #70a53a;
+  text-decoration: none;
+}
+footer {
+  text-align: center;
+  margin: 50px 0 70px 0;
+}

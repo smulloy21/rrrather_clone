@@ -7,7 +7,6 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-    binding.pry
     @question.user = current_user
     @question.save
     @question.options.create(option_params[:options][0])
