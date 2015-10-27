@@ -75,8 +75,8 @@
           <h4 class="modal-title">Ask a question</h4>
         </div>
         <div class="modal-body">
-          <div class="add_image_form">
-            <%= form_for @question do |f| %>
+          <div class="add_question_form">
+            <%= form_for(@question, :remote => true) do |f| %>
               <div class="form-group">
                 <%= f.label :title %>
                 <%= f.text_field(:title, {:class => 'form-control', :required => 'true'}) %>

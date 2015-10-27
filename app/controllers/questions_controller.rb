@@ -11,7 +11,10 @@ class QuestionsController < ApplicationController
     @question.save
     @question.options.create(option_params[:options][0])
     @question.options.create(option_params[:options][1])
-    redirect_to questions_path
+    respond_to do |format|
+      format.html { redirect_to questions_path }
+      format.js
+    end
   end
 
   private
