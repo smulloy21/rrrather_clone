@@ -135,6 +135,22 @@ h2 span {
   color: #fff;
   text-shadow: 1px 1px 0 #333;
 }
+.selected {
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 1px 1px 3px #dbd9d9,-1px -1px 3px #dbd9d9,-1px 1px 3px #dbd9d9,1px -1px 3px #dbd9d9;
+  background: -webkit-linear-gradient(top,rgba(169,208,63,1) 0,rgba(161,203,63,1) 23%,rgba(133,188,65,1) 72%,rgba(122,181,65,1) 100%);
+  color: #fff;
+  text-shadow: 1px 1px 0 #333;
+}
+.unselected {
+  border-radius: 5px;
+  background-color: #eee;
+  color: #70a53a;
+  text-shadow: 1px 1px 0 #fcfcfc;
+  padding: 5px;
+  box-shadow: 1px 1px 3px #dbd9d9,-1px -1px 3px #dbd9d9,-1px 1px 3px #dbd9d9,1px -1px 3px #dbd9d9;
+}
 .photo-insert {
   border-radius: 5px;
   background-size: cover; height: 200px;

@@ -1,25 +1,49 @@
-<div class="cols clearfix">
+<div class="cols clearfix" id="question<%= question.id %>">
   <div class="holder clearfix rrrather">
 
     <div class="col-xs-7">
-      <h2><%= question.title %>... <span>(asked by <%= link_to question.user.username, user_path(question.user) %> <%= time_ago_in_words question.created_at %> ago)</span></h2>
-      <div class="text-center col-xs-5 photo-tile">
-        <div class="photo-insert" style="background-image: url(<%= question.options.first.image_url %>);">
+      <h2><%= question.title %>... <span>(By <%= link_to question.user.username, user_path(question.user) %> <%= time_ago_in_words question.created_at %> ago)</span></h2>
+      <% if Vote.where(user_id: current_user.id, voteable_id: question.options.first.id).any? || Vote.where(user_id: current_user.id, voteable_id: question.options.last.id).any?%>
+        <div class="text-center col-xs-5 <%= Vote.where(user_id: current_user.id, voteable_id: question.options.first.id).any? ? 'selected' : 'unselected' %>">
+          <div class="photo-insert" style="background-image: url(<%= question.options.first.image_url %>);">
 
+          </div>
+          <h4><%= question.options.first.text %></h4>
         </div>
-        <h4><%= question.options.first.text %></h4>
-      </div>
-      <div class="col-xs-2 text-center">
-        <br><br>
-        <h2>OR</h2>
-        <h5><%= question.options.first.votes.count + question.options.first.votes.count %> votes</h5>
-      </div>
-      <div class="col-xs-5 text-center photo-tile">
-        <div class="photo-insert" style="background-image: url(<%= question.options.last.image_url %>);">
+        <div class="col-xs-2 text-center">
+          <br><br>
+          <h2>OR</h2>
+          <h5 class="votes"><%= question.options.first.votes.count + question.options.last.votes.count %> votes</h5>
+        </div>
+        <div class="col-xs-5 text-center photo-tile" id="option<%= question.options.last.id %>">
+          <div class="photo-insert" style="background-image: url(<%= question.options.last.image_url %>);">
 
+          </div>
+          <h4><%= question.options.last.text %></h4>
         </div>
-        <h4><%= question.options.last.text %></h4>
-      </div>
+      <% else %>
+        <%= link_to votes_path(option: question.options.first), :remote => true, method: :post do %>
+        <div class="text-center col-xs-5 <%= Vote.where(user_id: current_user.id, voteable_id: question.options.last.id).any? ? 'selected' : 'unselected' %>">
+          <div class="photo-insert" style="background-image: url(<%= question.options.first.image_url %>);">
+
+          </div>
+          <h4><%= question.options.first.text %></h4>
+        </div>
+        <% end %>
+        <div class="col-xs-2 text-center">
+          <br><br>
+          <h2>OR</h2>
+          <h5 class="votes"><%= question.options.first.votes.count + question.options.last.votes.count %> votes</h5>
+        </div>
+        <%= link_to votes_path(option: question.options.last), :remote => true, method: :post do %>
+          <div class="col-xs-5 text-center photo-tile" id="option<%= question.options.last.id %>">
+            <div class="photo-insert" style="background-image: url(<%= question.options.last.image_url %>);">
+
+            </div>
+            <h4><%= question.options.last.text %></h4>
+          </div>
+        <% end %>
+      <% end %>
     </div>
     <div class="col-xs-5 comment-box">
       <h3>Leave a comment</h3>

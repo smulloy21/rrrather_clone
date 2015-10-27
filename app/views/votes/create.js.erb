@@ -1,0 +1,5 @@
+$('#question<%= @question.id %>').find('.photo-tile').removeClass('photo-tile').addClass('unselected');
+$('#question<%= @question.id %>').find('.photo-tile > a').css('color', 'grey');
+$('#question<%= @question.id %>').find('a').removeAttr('href');
+$('#question<%= @question.id %>').find('.votes').text('<%= @question.options.first.votes.count + @question.options.last.votes.count %> votes');
+$('#option<%= @option.id %>').removeClass('unselected').addClass('selected');
